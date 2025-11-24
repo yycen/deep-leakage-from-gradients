@@ -66,7 +66,7 @@ Based on **Protocol 5.2** (OT-Based Random Vector OLE) from the research paper, 
             $\tilde{a}_{j, l+k} = \alpha_{j,l+k}^0 - \alpha_{j,l+k}^1 + \hat{a}_k \pmod q$
 3.  **Generate Challenge ($\theta$):**
     *   Hash the correction matrix using the Random Oracle.
-    *   $\theta = \text{RO}_{\mathbb{Z}_q^{l \times \rho}}(\text{session\_id} || \tilde{\mathbf{a}})$.
+    *   $\theta = \mathrm{RO}_{\mathbb{Z}_q^{l \times \rho}}(\mathrm{session\_id} || \tilde{\mathbf{a}})$.
     *   $\theta$ is an $l \times \rho$ matrix.
 4.  **Compute Response ($\mathbf{\eta}$):**
     *   Combine check values with inputs masked by the challenge.
