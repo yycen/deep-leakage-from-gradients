@@ -77,7 +77,7 @@ Based on **Protocol 5.2** (OT-Based Random Vector OLE) from the research paper, 
     *   Compute matrix $M \in \mathbb{Z}_q^{\xi \times \rho}$.
     *   For $j \in [1, \xi]$, $k \in [1, \rho]$:
         $M_{j,k} = \alpha_{j,l+k}^0 + \sum_{i=1}^l \theta_{i,k} \cdot \alpha_{j,i}^0 \pmod q$
-    *   $\mu = \text{RO}_{\{0,1\}^{2\lambda_c}}(\text{session\_id} || M)$.
+    *   $\mu = \mathrm{RO}_{\{0,1\}^{2\lambda_c}}(\mathrm{session\_id} || M)$.
 6.  **Compute Output Share ($\mathbf{c}$):**
     *   For $i \in [1, l]$:
         $c_i = -\sum_{j=1}^\xi g_j \cdot \alpha_{j,i}^0 \pmod q$
@@ -95,7 +95,7 @@ Based on **Protocol 5.2** (OT-Based Random Vector OLE) from the research paper, 
 
 **Local Computation (Bob):**
 1.  **Reconstruct Challenge:**
-    *   $\theta = \text{RO}_{\mathbb{Z}_q^{l \times \rho}}(\text{session\_id} || \tilde{\mathbf{a}})$.
+    *   $\theta = \mathrm{RO}_{\mathbb{Z}_q^{l \times \rho}}(\mathrm{session\_id} || \tilde{\mathbf{a}})$.
 2.  **Compute Effective OT Messages ($\mathbf{\dot{d}}, \mathbf{\hat{d}}$):**
     *   Bob applies Alice's correction $\tilde{\mathbf{a}}$ to his OT output $\mathbf{\gamma}$ based on his choice bits $\boldsymbol{\beta}$.
     *   For $j \in [1, \xi]$:
@@ -107,7 +107,7 @@ Based on **Protocol 5.2** (OT-Based Random Vector OLE) from the research paper, 
     *   Bob reconstructs the matrix $M'$ used for the hash $\mu$.
     *   For $j \in [1, \xi]$, $k \in [1, \rho]$:
         $M'_{j,k} = \hat{d}_{j,k} + \sum_{i=1}^l \theta_{i,k} \cdot \dot{d}_{j,i} - \beta_j \cdot \eta_k \pmod q$
-    *   Check: $\mu \stackrel{?}{=} \text{RO}_{\{0,1\}^{2\lambda_c}}(\text{session\_id} || M')$.
+    *   Check: $\mu \stackrel{?}{=} \mathrm{RO}_{\{0,1\}^{2\lambda_c}}(\mathrm{session\_id} || M')$.
 *   *Action:* If hash mismatch, **ABORT**. Alice is cheating.
 4.  **Compute Output Share ($\mathbf{d}$):**
     *   If check passes, collapse the columns using the gadget vector $\mathbf{g}$.
