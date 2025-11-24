@@ -61,7 +61,7 @@ Based on **Protocol 5.2** (OT-Based Random Vector OLE) from the research paper, 
     *   The OT outputs are random; Alice must adjust them to match her input $\mathbf{a}$.
     *   For each OT instance $j \in [1, \xi]$:
         *   For input indices $i \in [1, l]$:
-            $\tilde{a}_{j,i} = \alpha_{j,i}^0 - \alpha_{j,i}^1 + a_i \pmod q$
+            $\tilde{a} = \alpha_{j,i}^0 - \alpha_{j,i}^1 + a_i \pmod q$
         *   For check indices $k \in [1, \rho]$:
             $\tilde{a}_{j, l+k} = \alpha_{j,l+k}^0 - \alpha_{j,l+k}^1 + \hat{a}_k \pmod q$
 3.  **Generate Challenge ($\theta$):**
